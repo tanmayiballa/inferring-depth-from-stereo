@@ -38,8 +38,7 @@ The disparity image and the scaled depth image for the given input are shown bel
 The disparity image and the scaled depth image for the resized input are shown below.
 | Naive_disparity_resized | Naive_depth_resized |
 | - | - |
-![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/out_naive_resized.png)
-![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/output-naive-resized.png)
+|![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/out_naive_resized.png) | ![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/output-naive-resized.png) |
 
 As we can see from the results, the algorithm is able to differentiate between the background and the foreground properly. The disparity map also looks decent. However, there is some noise in the image and we probably need different techniques to treat the same.
 
