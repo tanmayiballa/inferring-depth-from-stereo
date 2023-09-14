@@ -1,21 +1,21 @@
 ## Inferring depth from stereo.
 
 ### Input images:
-![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/Input/view1.png)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/Input/view5.png)
+| view1 | view5 |
+| - | - |
+|![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/Input/view1.png)| ![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/Input/view5.png) |
 
 ### Pre-processing:
 
 **Border-pixel padding:**
 
-Since, the edge and corner pixels are ignored while computing the disparity costs of the images using a fixed-size window, we have padded the input images with the maximum disparity values. This helps in efficiently computing the disparity costs for the corder and edge pixels in the image.
+Since the edge and corner pixels are ignored while computing the disparity costs of the images using a fixed-size window, we have padded the input images with the maximum disparity values. This helps in efficiently computing the disparity costs for the corder and edge pixels in the image.
 
 This is a sample image after padding.
 
 **Resizing the image:**
 
-Owing to the time-complexity, we have down-sized the input images by a factor of 2, and have upsampled the disparity map later on. However, we have provided result images obtained without resizing.
+Owing to the time complexity, we have down-sized the input images by a factor of 2, and have upsampled the disparity map later on. However, we have provided result images obtained without resizing.
 
 ### Algorithms for inferring depth.
 
@@ -31,11 +31,13 @@ The mean squared error value as compared to the ground truth is:
 
 The disparity image and the scaled depth image for the given input are shown below.
 
-![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/out_naive.png)
-![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/output-naive.png)
+| Naive_disparity | Naive_depth |
+| - | - |
+| ![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/out_naive.png) | ![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/output-naive.png) |
 
 The disparity image and the scaled depth image for the resized input are shown below.
-
+| Naive_disparity_resized | Naive_depth_resized |
+| - | - |
 ![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/out_naive_resized.png)
 ![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/output-naive-resized.png)
 
@@ -54,16 +56,17 @@ The time taken for the naive method is approximately 1 minute if the image is no
 
 The mean squared error value as compared to the ground truth is: 
 
-The mean squared error have slightly decreased as compared to the naive approach. 
+The mean squared error has slightly decreased as compared to the naive approach. 
 
 The disparity image and the scaled depth image for the given input are shown below.
 
-![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/out_mrf.png)
-![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/output-mrf.png)
+| MRF_disparity | MRF_depth |
+| - | - |
+| ![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/out_mrf.png) | ![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/output-mrf.png) |
 
-The disparity image and the scaled depth image for the resized input are shown below.
-![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/out_mrf_resized.png)
-![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/output-mrf-resized.png)
+| MRF_disparity_resized | MRF_depth_resized |
+| - | - |
+| ![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/out_mrf_resized.png) | ![alt text](https://github.com/tanmayiballa/inferring-depth-from-stereo/blob/main/output-mrf-resized.png) |
 
 Though the error has decreased, there is no evident visual difference from the output images. The algorithm might require more number of iterations to further converge to the optimum.
 
